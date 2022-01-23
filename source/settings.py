@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ConverterBinary.urls'
+ROOT_URLCONF = 'source.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ConverterBinary.wsgi.application'
+WSGI_APPLICATION = 'source.wsgi.application'
 
 
 # Database

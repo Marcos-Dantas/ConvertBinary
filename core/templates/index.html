@@ -1,6 +1,8 @@
+
 <form method="post" action="{% url 'index' %}">
     {% csrf_token %}
     {{ form.as_p }}
-    
+    Numero Convertido: <input type="number" value= {% if numero_convertido %} {{ numero_convertido }} {% else %} value='' {% endif %}>
+   <br> 
     <input type="submit" value="Submit">
 </form>
