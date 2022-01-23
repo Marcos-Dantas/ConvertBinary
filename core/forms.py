@@ -3,7 +3,7 @@ from xml.dom import ValidationErr
 from django import forms
 
 class NumberForm(forms.Form):
-    number_field = forms.IntegerField(label='Digite um numero binario')
+    number_field = forms.IntegerField()
     
     def clean(self):
         errors = {}
