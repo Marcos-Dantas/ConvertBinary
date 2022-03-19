@@ -13,11 +13,6 @@ class NumberForm(forms.Form):
                 errors['number_field'] = "Apenas digitos binarios são aceitos."
                 break
             aux = int(aux / 10)        
-        if len(str(self.cleaned_data['number_field'])) > 8:
-            errors['number_field'] = "Numero não pode ter mais de 8 digitos."
         
         if errors:
             raise forms.ValidationError(errors)
-        
-
-    

@@ -56,25 +56,30 @@
         user-select: none;
         -webkit-user-select: none;
         width: auto;
-      }
+    }
       
-      .button-23:focus-visible {
+    .button-23:focus-visible {
         box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
         transition: box-shadow .2s;
-      }
+    }
       
-      .button-23:active {
+    .button-23:active {
         background-color: #F7F7F7;
         border-color: #000000;
         transform: scale(.96);
-      }
+    }
       
-      .button-23:disabled {
+    .button-23:disabled {
         border-color: #DDDDDD;
         color: #DDDDDD;
         cursor: not-allowed;
         opacity: 1;
-      }
+    }
+    .text-error {
+        color: red;
+        padding-bottom: 10px;
+    }
+    
       
 
 {% endblock %}
@@ -90,9 +95,15 @@
             <p>Numero Binario: {{ form.number_field }}</p>
             <p>Numero Decimal: <input type="number" value= {% if numero_convertido %} {{ numero_convertido }} {% else %} value='' {% endif %}></p> 
         </div>
+        {% if form.errors %}
+            {% for error in form.number_field.errors %}
+               <div class="text-error"> {{ error }} </div>
+            {% endfor %}
+            </ul>
+        {% endif %}
+ 
      
         <button class="button-23" role="button" type="submit" value="Saved">Converter</button>
-
 
     </form>
     
